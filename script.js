@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
 
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference, default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
 
@@ -248,20 +248,52 @@ milestones.forEach(milestone => {
 const galleryItems = [
     {
         category: 'baby-days',
-        image: 'images/baby-days-1.jpg',
+        image: {
+            webp: {
+                small: 'images/baby-days-1-300.webp',
+                medium: 'images/baby-days-1-500.webp',
+                large: 'images/baby-days-1-800.webp'
+            },
+            jpg: {
+                small: 'images/baby-days-1-300.jpg',
+                medium: 'images/baby-days-1-500.jpg',
+                large: 'images/baby-days-1-800.jpg'
+            }
+        },
         title: 'Sleeping Angel'
     },
     {
         category: 'family-time',
-        image: 'images/family-1.jpg',
+        image: {
+            webp: {
+                small: 'images/family-1-300.webp',
+                medium: 'images/family-1-500.webp',
+                large: 'images/family-1-800.webp'
+            },
+            jpg: {
+                small: 'images/family-1-300.jpg',
+                medium: 'images/family-1-500.jpg',
+                large: 'images/family-1-800.jpg'
+            }
+        },
         title: 'Family Picnic'
     },
     {
         category: 'outdoor-fun',
-        image: 'images/outdoor-1.jpg',
+        image: {
+            webp: {
+                small: 'images/outdoor-1-300.webp',
+                medium: 'images/outdoor-1-500.webp',
+                large: 'images/outdoor-1-800.webp'
+            },
+            jpg: {
+                small: 'images/outdoor-1-300.jpg',
+                medium: 'images/outdoor-1-500.jpg',
+                large: 'images/outdoor-1-800.jpg'
+            }
+        },
         title: 'Park Adventure'
     }
-    // Add more gallery items as needed
 ];
 
 // Populate Gallery
@@ -271,7 +303,29 @@ galleryItems.forEach(item => {
     galleryElement.className = 'gallery-item';
     galleryElement.setAttribute('data-category', item.category);
     galleryElement.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
+        <picture>
+            <source 
+                srcset="${item.image.webp.small} 300w,
+                        ${item.image.webp.medium} 500w,
+                        ${item.image.webp.large} 800w"
+                sizes="(max-width: 500px) 300px,
+                       (max-width: 800px) 500px,
+                       800px"
+                type="image/webp">
+            <source 
+                srcset="${item.image.jpg.small} 300w,
+                        ${item.image.jpg.medium} 500w,
+                        ${item.image.jpg.large} 800w"
+                sizes="(max-width: 500px) 300px,
+                       (max-width: 800px) 500px,
+                       800px"
+                type="image/jpeg">
+            <img src="${item.image.jpg.medium}" 
+                 alt="${item.title}"
+                 loading="lazy"
+                 width="500"
+                 height="500">
+        </picture>
         <div class="gallery-item-overlay">
             <h3>${item.title}</h3>
         </div>

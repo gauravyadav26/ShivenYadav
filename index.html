@@ -33,7 +33,30 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-image">
-                <img src="images/baby-photo.jpg" alt="Baby Photo" class="profile-image">
+                <picture>
+                    <source 
+                        srcset="images/IMG_9987-400.webp 400w,
+                                images/IMG_9987-600.webp 600w,
+                                images/IMG_9987-800.webp 800w"
+                        sizes="(max-width: 400px) 400px,
+                               (max-width: 600px) 600px,
+                               800px"
+                        type="image/webp">
+                    <source 
+                        srcset="images/IMG_9987-400.jpg 400w,
+                                images/IMG_9987-600.jpg 600w,
+                                images/IMG_9987-800.jpg 800w"
+                        sizes="(max-width: 400px) 400px,
+                               (max-width: 600px) 600px,
+                               800px"
+                        type="image/jpeg">
+                    <img src="images/IMG_9987-600.jpg" 
+                         alt="Baby Photo" 
+                         class="profile-image"
+                         loading="eager"
+                         width="600"
+                         height="600">
+                </picture>
             </div>
             <h1>Welcome to Our Little Star's World</h1>
             <p class="birth-info">Born on: <span class="birthdate">November 21st, 2023</span></p>
@@ -50,7 +73,25 @@
                     <h3>First Smile</h3>
                     <p class="date">[Date]</p>
                     <p>The day your beautiful smile lit up our world.</p>
-                    <img src="images/first-smile.jpg" alt="First Smile">
+                    <picture>
+                        <source 
+                            srcset="images/first-smile-300.webp 300w,
+                                    images/first-smile-500.webp 500w"
+                            sizes="(max-width: 500px) 300px,
+                                   500px"
+                            type="image/webp">
+                        <source 
+                            srcset="images/first-smile-300.jpg 300w,
+                                    images/first-smile-500.jpg 500w"
+                            sizes="(max-width: 500px) 300px,
+                                   500px"
+                            type="image/jpeg">
+                        <img src="images/first-smile-500.jpg" 
+                             alt="First Smile"
+                             loading="lazy"
+                             width="500"
+                             height="300">
+                    </picture>
                 </div>
             </div>
             <!-- More milestone items will be added dynamically -->
