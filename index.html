@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Little Star - A Journey of Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">My Little Star</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#milestones">Milestones</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About Him</a>
+            <a href="#messages">Messages</a>
+        </div>
+        <div class="nav-controls">
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/baby-photo.jpg" alt="Baby Photo" class="profile-image">
+            </div>
+            <h1>Welcome to Our Little Star's World</h1>
+            <p class="birth-info">Born on: <span class="birthdate">November 21st, 2023</span></p>
+            <p class="parent-message">Every day with you is a beautiful adventure filled with love, laughter, and endless joy. You are our greatest blessing.</p>
+        </div>
+    </section>
+
+    <!-- Milestones Section -->
+    <section id="milestones" class="milestones">
+        <h2>Our Journey Together</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>First Smile</h3>
+                    <p class="date">[Date]</p>
+                    <p>The day your beautiful smile lit up our world.</p>
+                    <img src="images/first-smile.jpg" alt="First Smile">
+                </div>
+            </div>
+            <!-- More milestone items will be added dynamically -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Precious Moments</h2>
+        <div class="gallery-categories">
+            <button class="category-btn active" data-category="all">All Photos</button>
+            <button class="category-btn" data-category="baby-days">Baby Days</button>
+            <button class="category-btn" data-category="family-time">Family Time</button>
+            <button class="category-btn" data-category="outdoor-fun">Outdoor Fun</button>
+        </div>
+        <div class="gallery-grid">
+            <!-- Gallery items will be added dynamically -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Getting to Know Our Little Star</h2>
+        <div class="about-content">
+            <div class="personality">
+                <h3>Personality</h3>
+                <p>[Personality description]</p>
+            </div>
+            <div class="favorites">
+                <h3>Favorites</h3>
+                <ul>
+                    <li><i class="fas fa-tractor"></i> Toy: Tractor</li>
+                    <li><i class="fas fa-utensils"></i> Food: [Favorite food]</li>
+                    <li><i class="fas fa-palette"></i> Colors: [Favorite colors]</li>
+                </ul>
+            </div>
+            <div class="fun-facts">
+                <h3>Fun Facts</h3>
+                <ul>
+                    <li>[Fun fact 1]</li>
+                    <li>[Fun fact 2]</li>
+                    <li>[Fun fact 3]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages" class="messages">
+        <h2>Love Notes</h2>
+        <div class="message-form">
+            <form id="guestbook-form">
+                <input type="text" placeholder="Your Name" required>
+                <textarea placeholder="Write your message..." required></textarea>
+                <button type="submit">Send Love</button>
+            </form>
+        </div>
+        <div class="message-board">
+            <!-- Messages will be added dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <i class="fas fa-heart"></i> by Loving Parents</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
